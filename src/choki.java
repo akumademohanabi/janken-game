@@ -1,6 +1,6 @@
 package src;
 
-public class choki implements Hand {
+public class Choki implements Hand {
 
     private String HAND_NAME = "チョキ";
 
@@ -17,6 +17,39 @@ public class choki implements Hand {
      　　　　1 : 自身が引数で指定した手より強い
 
      */
+
+public int compare(Hand hand) {
+
+       if(hand instanceof Pa) {    //チョキ　vs グー（自分）
+
+           return 1;
+
+       } else if(hand instanceof Gu) {    //パー　vs グー（自分）
+
+           return -1;
+
+       } else {
+
+           return 0;    //グー　vs グー（自分）
+
+       }
+
+   }
+
+
+
+   public String getHandName() {
+
+       return this.HAND_NAME;
+
+   }
+
+}
+
+
+
+
+
 
     public int compare(Hand hand) {
 
